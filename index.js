@@ -12,7 +12,6 @@ let isGenerating = false;
 
 // Main rendering of colors within the hex container acc to selected options
 colorForm.addEventListener('submit', async function(e) {
-    console.log('I was clicked')
     e.preventDefault()
     if (isGenerating) return;
     isGenerating = true;
@@ -27,7 +26,7 @@ colorForm.addEventListener('submit', async function(e) {
         if (mood) {
             const moodColorResponse = await fetch('/.netlify/functions/fetchMoodColors', {
                   method: 'POST',
-                  body: JSON.stringify({ colorsArray, mood })
+                  body: JSON.stringify({ paletteColors, mood })
             });
             const moodColors = await moodColorResponse.json();
             renderColors(moodColors)
