@@ -1,5 +1,4 @@
 import { palettes } from '/palettes.js'
-import { fetchMoodColors } from '/fetchMoodColors.js'
 import { moods } from '/moods.js'
 
 const hexContainer = document.getElementById('hex-container')
@@ -26,7 +25,11 @@ colorForm.addEventListener('submit', async function(e) {
         // even if palette is not chosen the Color API will return colors 
         const paletteColors = await fetchPaletteColors(seedColor, palette)  
         if (mood) {
-            const moodColors = await fetchMoodColors(paletteColors, mood)
+            const moodColorResponse = await fetch('/.netlify/functions/fetchMoodColors', {
+                  method: 'POST',
+                  body: JSON.stringify({ colorsArray, mood })
+            });
+            const moodColors = await moodColorResponse.json();
             renderColors(moodColors)
         }
         renderColors(getRandomColors(paletteColors))
