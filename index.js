@@ -5,8 +5,6 @@ const hexContainer = document.getElementById('hex-container')
 const paletteSelectDropdown = document.getElementById('palette')
 const moodSelectDropdown = document.getElementById('mood')
 const colorForm = document.getElementById('color-form')
-const mobileNavSlider = document.getElementById('open-mobile-nav')
-const closeMobileNavBtn = document.getElementById('close-mobile-nav')
 
 let isGenerating = false;
 
