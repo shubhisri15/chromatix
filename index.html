@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
+        <!-- Font awesome icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- Tinycolor A11y contrast check -->
+        <script src="https://cdn.jsdelivr.net/npm/tinycolor2@1.6.0/tinycolor.min.js"></script>
+    </head>
+    <body>
+        <nav>
+            <h1>Chroma<span>TIX</span></h1>
+            <p>You choose the vibe, we choose the palette.</p>
+        </nav>
+        <main>
+            <form class="color-form" id="color-form">
+                <!-- desktop view only -->
+
+                <div class="select-container">
+                    <div class="filters">
+                        <input type='color' name="seedColor" class="seed-color" id="seed-color">
+                        <select id="palette" name="palette">
+                            <option value="">Select Palette</option>
+                        </select>
+                        <select id="mood" name="mood">
+                            <option value="">Select Mood</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="generate-btn" id="generate-btn">
+                        Generate
+                    </button>
+                </div>
+            </form>
+            
+            <div class="hex-container" id="hex-container">
+                <div class="hex" id="hex-1" data-hex="hex-1">
+                    <p>#F55A5A</p>
+                </div>
+                <div class="hex" id="hex-2" data-hex="hex-2">
+                    <p>#04395E</p>
+                </div>
+                <div class="hex" id="hex-3" data-hex="hex-3">
+                    <p>#FBF3AB</p>
+                </div>
+                <div class="hex" id="hex-4" data-hex="hex-4">
+                    <p>#DB3069</p>
+                </div>
+                <div class="hex" id="hex-5" data-hex="hex-5">
+                    <p>#14CC60</p>
+                </div>
+            </div>
+        </main>
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
