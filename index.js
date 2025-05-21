@@ -26,7 +26,7 @@ colorForm.addEventListener('submit', async function(e) {
         if (mood) {
             const moodColorResponse = await fetch('/.netlify/functions/fetchMoodColors', {
                   method: 'POST',
-                  body: JSON.stringify({ paletteColors, mood })
+                  body: JSON.stringify({ colorsArray: paletteColors, mood })
             });
             const moodColors = await moodColorResponse.json();
             renderColors(moodColors)
