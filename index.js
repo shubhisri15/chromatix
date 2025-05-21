@@ -41,11 +41,19 @@ colorForm.addEventListener('submit', async function(e) {
 
 // clicking on any of the hexes should copy the hex-code to clipboard
 hexContainer.addEventListener('click', function(e) {
-    if(e.target.dataset.hex) {
-        const hexText = document.getElementById(e.target.id).textContent.trim()
-        copyToClipboard(hexText)
+    if (e.target.dataset.hex) {
+        const hexDiv = document.getElementById(e.target.id);
+        const hexText = hexDiv.querySelector("p"); // get the <p> with the hex code
+        const originalText = hexText.textContent;
+
+        copyToClipboard(originalText.trim());
+
+        hexText.textContent = "Copied!";
+        setTimeout(() => {
+            hexText.textContent = originalText;
+        }, 1000);
     }
-})
+});
 
 // renders final colors on the screen
 function renderColors(colors) {
