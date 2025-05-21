@@ -73,6 +73,11 @@ option {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     min-width: 120px;
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    background-color: #155A8A;
 }
 
 .seed-color {
@@ -111,7 +116,7 @@ option {
 .hex::after {
   content: "Click to copy!";
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.7);
